@@ -7,10 +7,55 @@
 body {
     margin: 0;
     height: 100vh;
-    display: flex;
     overflow: hidden;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
     font-family: 'Roboto', sans-serif;
+}
+
+.counter {
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.counter.hide {
+    animation: hide 0.4s ease-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.final {
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.final.show {
+    animation: show 0.4s ease-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes hide {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+@keyframes show {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
